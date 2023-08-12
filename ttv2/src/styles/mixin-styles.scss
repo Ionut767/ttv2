@@ -1,0 +1,18 @@
+@mixin flex-center($boolRow) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if ($boolRow) {
+    flex-direction: row;
+  } @else {
+    flex-direction: column;
+  }
+}
+@mixin full-screen($procentHeight) {
+  width: 100%;
+  @if ($procentHeight) {
+    height: 100%;
+  } @else {
+    height: 100vh;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../../../../styles/mixin-styles.scss";
+.videoContainer {
+  @include flex-center(false);
+  @include full-screen(true);
+  .videoPlayer {
+    @include flex-center(false);
+    @include full-screen(true);
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .videoDetails {
+    position: absolute;
+  }
+}
