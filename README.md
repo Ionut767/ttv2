@@ -43,7 +43,7 @@ We're excited to have you on board as we shape TTV2! If you're interested in con
 
 ## License
 
-This project operates under the [MIT License](....).
+This project operates under the [MIT License](https://github.com/Ionut767/ttv2/blob/main/License/MIT-License.md).
 
 ## Stay Tuned!
 
