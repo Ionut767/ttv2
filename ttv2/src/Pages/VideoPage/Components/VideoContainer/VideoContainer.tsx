@@ -1,18 +1,34 @@
 import VideoContainerStyle from "./style/VideoContainer.module.css";
 import { VideoContainerInterface } from "../../../../interfaces/interfaces";
+import { useState } from "react";
 const VideoContainer: React.FC<VideoContainerInterface> = ({
   videoInfo,
   videoAuthor,
 }) => {
+  const [isVideoPlaying, setVideoPlaying] = useState<boolean>(true);
+  const handleVideoClick = () => {
+    const videoElement = document.querySelector("video");
+    if (videoElement) {
+      if (isVideoPlaying) {
+        videoElement.pause();
+      } else {
+        videoElement.play();
+      }
+      setVideoPlaying(!isVideoPlaying);
+    }
+  };
+
   return (
     <div className={VideoContainerStyle.videoContainer}>
-      <div className={VideoContainerStyle.videoPlayer}>
+      <div
+        className={VideoContainerStyle.videoPlayer}
+        onClick={handleVideoClick}>
         <video
           src={videoInfo.videoSource}
           disablePictureInPicture={true}
           controls={false}
           loop={true}
-          autoPlay={true}
+          autoPlay={isVideoPlaying}
         />
       </div>
       <div className={VideoContainerStyle.videoDetails}>
@@ -21,16 +37,16 @@ const VideoContainer: React.FC<VideoContainerInterface> = ({
             src={videoAuthor.videoAuthorAvatar}
             alt={`${videoAuthor.videoAuthorUsername}'s avatar`}
           />
-        </div>
-        <div className={VideoContainerStyle.VideoInfos}>
           <p className={VideoContainerStyle.username}>
             {videoAuthor.videoAuthorUsername}
           </p>
+        </div>
+        <div className={VideoContainerStyle.VideoInfos}>
           <p className={VideoContainerStyle.description}>
             {videoInfo.videoDescription}
           </p>
           <p className={VideoContainerStyle.tags}>
-            Tags: {videoInfo.videoTags.join(", ")}
+            {videoInfo.videoTags.join(", ")}
           </p>
           <div className={VideoContainerStyle.SongContainer}>
             <p>{videoInfo.videoSong.songName}</p>

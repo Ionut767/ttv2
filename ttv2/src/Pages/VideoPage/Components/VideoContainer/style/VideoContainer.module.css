@@ -34,6 +34,12 @@
   bottom: 0;
 }
 .videoContainer .videoDetails .videoAuthor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-inline-start: 10px;
+}
+.videoContainer .videoDetails .videoAuthor p {
   margin: 10px;
 }
 .videoContainer .videoDetails .videoAuthor img {
@@ -44,18 +50,25 @@
   color: white;
   margin: 10px;
 }
+.videoContainer .videoDetails .VideoInfos p {
+  margin: 12px;
+  font-size: larger;
+}
 .videoContainer .videoDetails .VideoInfos .tags {
   color: gray;
 }
 .videoContainer .videoDetails .VideoInfos .SongContainer {
-  margin: 10px;
+  margin: 8px 10px;
+  padding-inline: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128, 0.544);
 }
 .videoContainer .videoDetails .VideoInfos .SongContainer img {
-  max-block-size: 40px;
+  max-block-size: 35px;
   border-radius: 50%;
   animation: rotateAnimation 5s linear infinite;
 }/*# sourceMappingURL=VideoContainer.module.css.map */

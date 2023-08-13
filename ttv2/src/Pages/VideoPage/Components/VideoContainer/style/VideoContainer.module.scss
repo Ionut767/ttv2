@@ -15,7 +15,13 @@
     width: 100%;
     bottom: 0;
     .videoAuthor {
-      margin: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-inline-start: 10px;
+      p {
+        margin: 10px;
+      }
       img {
         @include default-avatar($defaultAvatarSize);
       }
@@ -23,17 +29,24 @@
     .VideoInfos {
       color: white;
       margin: 10px;
+      p {
+        margin: 12px;
+        font-size: larger;
+      }
       .tags {
         color: gray;
       }
       .SongContainer {
-        margin: 10px;
+        margin: 8px 10px;
+        padding-inline: 10px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        border-radius: 20px;
+        background-color: rgba(128, 128, 128, 0.544);
         img {
-          @include default-avatar(calc($defaultAvatarSize - 10px));
+          @include default-avatar(calc($defaultAvatarSize - 15px));
           @include rotate-animation(5s);
         }
       }
