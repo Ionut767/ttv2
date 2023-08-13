@@ -1,3 +1,11 @@
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .videoContainer {
   display: flex;
   justify-content: center;
@@ -22,4 +30,32 @@
 }
 .videoContainer .videoDetails {
   position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.videoContainer .videoDetails .videoAuthor {
+  margin: 10px;
+}
+.videoContainer .videoDetails .videoAuthor img {
+  max-block-size: 50px;
+  border-radius: 50%;
+}
+.videoContainer .videoDetails .VideoInfos {
+  color: white;
+  margin: 10px;
+}
+.videoContainer .videoDetails .VideoInfos .tags {
+  color: gray;
+}
+.videoContainer .videoDetails .VideoInfos .SongContainer {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.videoContainer .videoDetails .VideoInfos .SongContainer img {
+  max-block-size: 40px;
+  border-radius: 50%;
+  animation: rotateAnimation 5s linear infinite;
 }/*# sourceMappingURL=VideoContainer.module.css.map */

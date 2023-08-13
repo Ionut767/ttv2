@@ -16,3 +16,19 @@
     height: 100vh;
   }
 }
+@mixin default-avatar($size) {
+  max-block-size: $size;
+  border-radius: 50%;
+}
+$defaultAvatarSize: 50px;
+@mixin rotate-animation($time) {
+  animation: rotateAnimation $time linear infinite;
+}
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

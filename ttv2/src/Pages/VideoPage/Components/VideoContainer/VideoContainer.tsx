@@ -9,20 +9,36 @@ const VideoContainer: React.FC<VideoContainerInterface> = ({
       <div className={VideoContainerStyle.videoPlayer}>
         <video
           src={videoInfo.videoSource}
-          controls={true}
+          disablePictureInPicture={true}
+          controls={false}
           loop={true}
           autoPlay={true}
         />
       </div>
       <div className={VideoContainerStyle.videoDetails}>
-        <h2>{videoInfo.videoDescription}</h2>
-        <p>Tags: {videoInfo.videoTags.join(", ")}</p>
         <div className={VideoContainerStyle.videoAuthor}>
           <img
             src={videoAuthor.videoAuthorAvatar}
             alt={`${videoAuthor.videoAuthorUsername}'s avatar`}
           />
-          <p>{videoAuthor.videoAuthorUsername}</p>
+        </div>
+        <div className={VideoContainerStyle.VideoInfos}>
+          <p className={VideoContainerStyle.username}>
+            {videoAuthor.videoAuthorUsername}
+          </p>
+          <p className={VideoContainerStyle.description}>
+            {videoInfo.videoDescription}
+          </p>
+          <p className={VideoContainerStyle.tags}>
+            Tags: {videoInfo.videoTags.join(", ")}
+          </p>
+          <div className={VideoContainerStyle.SongContainer}>
+            <p>{videoInfo.videoSong.songName}</p>
+            <img
+              src={videoInfo.videoSong.songAvatar}
+              alt={videoInfo.videoSong.songName}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -6,12 +6,37 @@
     @include flex-center(false);
     @include full-screen(true);
     video {
-      width: 100%;
-      height: 100%;
+      @include full-screen(true);
       object-fit: contain;
     }
   }
   .videoDetails {
     position: absolute;
+    width: 100%;
+    bottom: 0;
+    .videoAuthor {
+      margin: 10px;
+      img {
+        @include default-avatar($defaultAvatarSize);
+      }
+    }
+    .VideoInfos {
+      color: white;
+      margin: 10px;
+      .tags {
+        color: gray;
+      }
+      .SongContainer {
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        img {
+          @include default-avatar(calc($defaultAvatarSize - 10px));
+          @include rotate-animation(5s);
+        }
+      }
+    }
   }
 }
