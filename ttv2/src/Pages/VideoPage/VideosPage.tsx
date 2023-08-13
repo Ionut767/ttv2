@@ -3,7 +3,7 @@ import VideosPageStyle from "./style/VideosPage.module.css";
 import { VideoInfo, VideoAuthor } from "../../interfaces/interfaces";
 
 const VideosPage: React.FC = () => {
-  const videoSource = require("../../videos/v3.mp4");
+  const videoSource = require("../../videos/v2.mp4");
   const videoImage = require("../../Images/Top-One-Piece-PFP-1200x1200.png");
   const videoInfoParams: VideoInfo = {
     videoSource: videoSource,

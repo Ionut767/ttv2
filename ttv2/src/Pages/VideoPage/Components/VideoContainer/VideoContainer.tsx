@@ -1,5 +1,6 @@
 import VideoContainerStyle from "./style/VideoContainer.module.css";
 import { VideoContainerInterface } from "../../../../interfaces/interfaces";
+import { FaPlay } from "react-icons/fa";
 import { useState } from "react";
 const VideoContainer: React.FC<VideoContainerInterface> = ({
   videoInfo,
@@ -20,6 +21,11 @@ const VideoContainer: React.FC<VideoContainerInterface> = ({
 
   return (
     <div className={VideoContainerStyle.videoContainer}>
+      <div
+        style={isVideoPlaying ? { display: "none" } : { display: "block" }}
+        className={VideoContainerStyle.pauseIcon}>
+        <FaPlay />
+      </div>
       <div
         className={VideoContainerStyle.videoPlayer}
         onClick={handleVideoClick}>

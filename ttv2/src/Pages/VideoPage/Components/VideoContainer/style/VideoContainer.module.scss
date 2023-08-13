@@ -2,6 +2,12 @@
 .videoContainer {
   @include flex-center(false);
   @include full-screen(true);
+  .pauseIcon {
+    @include flex-center(false);
+    @include position-center();
+    font-size: xxx-large;
+    color: rgba(255, 255, 255, 0.55);
+  }
   .videoPlayer {
     @include flex-center(false);
     @include full-screen(true);
@@ -15,9 +21,8 @@
     width: 100%;
     bottom: 0;
     .videoAuthor {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      @include flex-center(true);
+      justify-content: normal;
       margin-inline-start: 10px;
       p {
         margin: 10px;
@@ -30,7 +35,6 @@
       color: white;
       margin: 10px;
       p {
-        margin: 12px;
         font-size: larger;
       }
       .tags {
@@ -39,12 +43,13 @@
       .SongContainer {
         margin: 8px 10px;
         padding-inline: 10px;
-        display: flex;
-        flex-direction: row;
+        @include flex-center(true);
         justify-content: space-between;
-        align-items: center;
         border-radius: 20px;
         background-color: rgba(128, 128, 128, 0.544);
+        p {
+          margin: 10px;
+        }
         img {
           @include default-avatar(calc($defaultAvatarSize - 15px));
           @include rotate-animation(5s);
