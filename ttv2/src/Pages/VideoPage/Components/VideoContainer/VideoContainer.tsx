@@ -1,19 +1,19 @@
 import VideoContainerStyle from "./style/VideoContainer.module.css";
 import { VideoContainerInterface } from "../../../../interfaces/interfaces";
 import { FaPlay } from "react-icons/fa";
-import { useState } from "react";
+import { useRef, useState } from "react";
 const VideoContainer: React.FC<VideoContainerInterface> = ({
   videoInfo,
   videoAuthor,
 }) => {
-  const [isVideoPlaying, setVideoPlaying] = useState<boolean>(true);
+  const [isVideoPlaying, setVideoPlaying] = useState<boolean>(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const handleVideoClick = () => {
-    const videoElement = document.querySelector("video");
-    if (videoElement) {
+    if (videoRef.current) {
       if (isVideoPlaying) {
-        videoElement.pause();
+        videoRef.current.pause();
       } else {
-        videoElement.play();
+        videoRef.current.play();
       }
       setVideoPlaying(!isVideoPlaying);
     }
@@ -30,11 +30,11 @@ const VideoContainer: React.FC<VideoContainerInterface> = ({
         className={VideoContainerStyle.videoPlayer}
         onClick={handleVideoClick}>
         <video
+          ref={videoRef}
           src={videoInfo.videoSource}
           disablePictureInPicture={true}
           controls={false}
           loop={true}
-          autoPlay={isVideoPlaying}
         />
       </div>
       <div className={VideoContainerStyle.videoDetails}>
