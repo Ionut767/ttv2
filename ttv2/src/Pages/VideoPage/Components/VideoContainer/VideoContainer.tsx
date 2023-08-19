@@ -18,9 +18,10 @@ const VideoContainer: React.FC<VideoContainerInterface> = ({
       setVideoPlaying(!isVideoPlaying);
     }
   };
-
   return (
-    <div className={VideoContainerStyle.videoContainer}>
+    <div
+      className={VideoContainerStyle.videoContainer}
+      style={{ minHeight: "100vh" }}>
       <div
         style={isVideoPlaying ? { display: "none" } : { display: "block" }}
         className={VideoContainerStyle.pauseIcon}>

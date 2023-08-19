@@ -1,13 +1,8 @@
 @import "../../../styles/mixin-styles.scss";
 .Main {
-  @include flex-center(false);
-  @include full-screen(true);
+  @include full-screen(false);
+  position: relative;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
   scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  & > div {
-    scroll-snap-stop: normal;
-  }
-  div > div {
-    scroll-snap-align: center;
-  }
 }

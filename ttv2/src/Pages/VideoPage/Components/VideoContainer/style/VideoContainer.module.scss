@@ -1,7 +1,9 @@
 @import "../../../../../styles/mixin-styles.scss";
 .videoContainer {
   @include flex-center(false);
-  @include full-screen(true);
+  @include full-screen(false);
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
   position: relative;
   .pauseIcon {
     @include position-center();
@@ -10,7 +12,7 @@
   }
   .videoPlayer {
     @include flex-center(false);
-    @include full-screen(true);
+    @include full-screen(false);
     video {
       @include full-screen(true);
       object-fit: contain;
