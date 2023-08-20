@@ -1,13 +1,16 @@
 import VideoContainerStyle from "./style/VideoContainer.module.css";
 import { VideoContainerInterface } from "../../../../interfaces/interfaces";
 import { FaPlay } from "react-icons/fa";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 const VideoContainer: React.FC<VideoContainerInterface> = ({
   videoInfo,
   videoAuthor,
 }) => {
-  const [isVideoPlaying, setVideoPlaying] = useState<boolean>(false);
+  const [isVideoInView, setVideoInView] = useState<boolean>(false);
+  const [isVideoPlaying, setVideoPlaying] = useState<boolean>(true);
+
   const videoRef = useRef<HTMLVideoElement | null>(null);
+
   const handleVideoClick = () => {
     if (videoRef.current) {
       if (isVideoPlaying) {
@@ -18,10 +21,51 @@ const VideoContainer: React.FC<VideoContainerInterface> = ({
       setVideoPlaying(!isVideoPlaying);
     }
   };
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVideoInView(true);
+        } else {
+          setVideoInView(false);
+          setVideoPlaying(true);
+        }
+      });
+    }, observerOptions);
+
+    const currentVideoRef = videoRef.current;
+
+    if (currentVideoRef) {
+      observer.observe(currentVideoRef);
+    }
+
+    return () => {
+      if (currentVideoRef) {
+        observer.unobserve(currentVideoRef);
+      }
+    };
+  }, [videoRef]);
+
+  useEffect(() => {
+    if (!isVideoInView && videoRef.current) {
+      videoRef.current.currentTime = 0;
+    }
+    if (isVideoInView && isVideoPlaying) {
+      videoRef.current?.play();
+    } else {
+      videoRef.current?.pause();
+    }
+  }, [isVideoInView, isVideoPlaying]);
+
   return (
-    <div
-      className={VideoContainerStyle.videoContainer}
-      style={{ minHeight: "100vh" }}>
+    <div className={VideoContainerStyle.videoContainer}>
       <div
         style={isVideoPlaying ? { display: "none" } : { display: "block" }}
         className={VideoContainerStyle.pauseIcon}>
