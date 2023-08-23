@@ -8,28 +8,28 @@ const VideosPage: React.FC = () => {
   const videoInfoArray: VideoInfo[] = [
     {
       videoSource: require("../../videos/v2.mp4"),
-      videoDescription: "An example video description for v2.mp4.",
-      videoTags: ["tag1", "tag2", "tag3"],
+      videoDescription: "Learn how to be a better developer!",
+      videoTags: ["Programming", "Coding", "Fun"],
       videoSong: {
-        songName: "example_user song",
+        songName: "The Best Day Ever!",
         songAvatar: videoImage,
       },
     },
     {
       videoSource: require("../../videos/v3.mp4"),
-      videoDescription: "An example video description for v3.mp4.",
-      videoTags: ["tag4", "tag5", "tag6"],
+      videoDescription: "Learn how to be a better developer!",
+      videoTags: ["Programming", "Coding", "Fun"],
       videoSong: {
-        songName: "example_user song",
+        songName: "The Best Day Ever!",
         songAvatar: videoImage,
       },
     },
     {
       videoSource: require("../../videos/v1.mp4"),
-      videoDescription: "An example video description for v1.mp4.",
-      videoTags: ["tag7", "tag8", "tag9"],
+      videoDescription: "Learn how to be a better developer!",
+      videoTags: ["Programming", "Coding", "Fun"],
       videoSong: {
-        songName: "example_user song",
+        songName: "The Best Day Ever!",
         songAvatar: videoImage,
       },
     },
@@ -37,7 +37,7 @@ const VideosPage: React.FC = () => {
 
   const VideoAuthorParams: VideoAuthor = {
     videoAuthorAvatar: videoImage,
-    videoAuthorUsername: "example_user",
+    videoAuthorUsername: "Ionut767",
   };
   return (
     <div className={VideosPageStyle.Main}>

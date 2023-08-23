@@ -13,6 +13,7 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  height: 90vh;
   scroll-snap-align: center;
   scroll-snap-stop: always;
   position: relative;
@@ -32,18 +33,19 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  height: 90vh;
 }
 .videoContainer .videoPlayer video {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: none;
+     object-fit: none;
 }
 .videoContainer .videoDetails {
   position: absolute;
   width: 100%;
   font-size: x-small;
-  bottom: 10vh;
+  bottom: 0;
   z-index: 1;
 }
 .videoContainer .videoDetails .videoAuthor {
@@ -56,6 +58,9 @@
 }
 .videoContainer .videoDetails .videoAuthor p {
   margin: 10px;
+}
+.videoContainer .videoDetails .videoAuthor .username {
+  font-size: large;
 }
 .videoContainer .videoDetails .videoAuthor img {
   max-block-size: 50px;

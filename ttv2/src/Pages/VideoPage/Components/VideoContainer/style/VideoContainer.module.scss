@@ -2,6 +2,7 @@
 .videoContainer {
   @include flex-center(false);
   @include full-screen(false);
+  height: 90vh;
   scroll-snap-align: center;
   scroll-snap-stop: always;
   position: relative;
@@ -13,16 +14,17 @@
   .videoPlayer {
     @include flex-center(false);
     @include full-screen(false);
+    height: 90vh;
     video {
       @include full-screen(true);
-      object-fit: contain;
+      object-fit: none;
     }
   }
   .videoDetails {
     position: absolute;
     width: 100%;
     font-size: x-small;
-    bottom: 10vh;
+    bottom: 0;
     z-index: 1;
     .videoAuthor {
       @include flex-center(true);
@@ -30,6 +32,9 @@
       margin-inline-start: 10px;
       p {
         margin: 10px;
+      }
+      .username {
+        font-size: large;
       }
       img {
         @include default-avatar($defaultAvatarSize);
