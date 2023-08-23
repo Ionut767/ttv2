@@ -13,7 +13,6 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  height: 90vh;
   scroll-snap-align: center;
   scroll-snap-stop: always;
   position: relative;
@@ -44,7 +43,7 @@
   position: absolute;
   width: 100%;
   font-size: x-small;
-  bottom: 0;
+  bottom: 10vh;
   z-index: 1;
 }
 .videoContainer .videoDetails .videoAuthor {
