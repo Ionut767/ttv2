@@ -1,0 +1,38 @@
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.FooterMenuBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  font-size: larger;
+  color: gray;
+  width: 100%;
+  height: 10vh;
+}
+.FooterMenuBar .plus {
+  border: 1px solid white;
+  border-radius: 20px;
+  font-size: xx-large;
+  width: auto;
+}
+.FooterMenuBar span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.FooterMenuBar span svg {
+  padding: 5px;
+}
+.FooterMenuBar span p {
+  margin: 0;
+}/*# sourceMappingURL=FooterMenuBar.module.css.map */

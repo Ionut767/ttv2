@@ -1,0 +1,25 @@
+@import "../../../../../styles/mixin-styles.scss";
+.FooterMenuBar {
+  @include flex-center(true);
+  position: fixed;
+  font-size: larger;
+  color: gray;
+  width: 100%;
+  height: 10vh;
+  .plus {
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: xx-large;
+    width: auto;
+  }
+  span {
+    @include flex-center(false);
+    width: 100%;
+    svg {
+      padding: 5px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

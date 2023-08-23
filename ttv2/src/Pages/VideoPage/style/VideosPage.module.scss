@@ -1,6 +1,7 @@
 @import "../../../styles/mixin-styles.scss";
 .Main {
   @include full-screen(false);
+  height: 90vh;
   position: relative;
   overflow-y: auto;
   overscroll-behavior-y: contain;
